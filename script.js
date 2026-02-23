@@ -107,7 +107,8 @@ function buildMainChart(type='sales', years=filteredYears) {
     data: { labels, datasets },
     options: {
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
       plugins: { legend: { position: 'top' } },
       scales: {
         x: { stacked: false },
