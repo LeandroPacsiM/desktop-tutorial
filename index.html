@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Analytics Dashboard - Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">logoipsum</div>
+    </div>
+    <nav class="nav">
+      <button class="nav-item">Dashboard</button>
+      <button class="nav-item">Form</button>
+      <button class="nav-item">List</button>
+      <button class="nav-item">Profile</button>
+      <button class="nav-item active">Result</button>
+      <button class="nav-item">Exception</button>
+      <button class="nav-item">Account</button>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="title">Site Title</div>
+      <div class="top-actions">
+        <input class="search" placeholder="Buscar..." />
+        <button class="icon">🔔</button>
+        <div class="user">John ▾</div>
+      </div>
+    </header>
+
+    <section class="container">
+      <div class="kpis">
+        <div class="kpi card">
+          <div class="kpi-title">Total Sales</div>
+          <div class="kpi-value" id="kpi-sales">$ 154,430</div>
+          <div class="kpi-meta">
+            <span>Week ratio: <b id="kpi-week">13%</b> ▲</span>
+            <span>Day ratio: <b id="kpi-day">10%</b> ▼</span>
+          </div>
+          <div class="kpi-sub">Day Sales $15,443</div>
+        </div>
+
+        <div class="kpi card">
+          <div class="kpi-title">Visits</div>
+          <div class="kpi-value" id="kpi-visits">6,480</div>
+          <canvas id="sparkline" height="48"></canvas>
+          <div class="kpi-sub">Day visits 4,280</div>
+        </div>
+
+        <div class="kpi card">
+          <div class="kpi-title">Payments</div>
+          <div class="kpi-value" id="kpi-payments">5,320</div>
+          <canvas id="miniBar" height="48"></canvas>
+          <div class="kpi-sub">Conversion rate 50%</div>
+        </div>
+
+        <div class="kpi card small">
+          <div class="kpi-title">Operation Effect</div>
+          <div class="kpi-value big" id="kpi-effect">88%</div>
+        </div>
+      </div>
+
+      <div class="panel card">
+        <div class="panel-top">
+          <div class="tabs">
+            <button class="tab active" data-type="sales">Sales</button>
+            <button class="tab" data-type="visits">Visits</button>
+          </div>
+
+          <div class="controls">
+            <label>From <input type="date" id="dateFrom"></label>
+            <label>To <input type="date" id="dateTo"></label>
+            <button id="applyRange">Apply</button>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <div class="chart-area">
+            <h3>Store Sales Trend</h3>
+            <canvas id="mainChart" height="220"></canvas>
+          </div>
+
+          <aside class="ranking">
+            <h4>Sales ranking</h4>
+            <ol id="rankingList" class="ranking-list"></ol>
+          </aside>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
